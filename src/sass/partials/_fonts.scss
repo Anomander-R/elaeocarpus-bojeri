@@ -1,0 +1,63 @@
+@use "functions" as fun;
+
+// @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+// <uniquifier>: Use a uniquifier for the class name
+// <weight>: Use a value from 100 to 900
+
+// https://gwfh.mranftl.com/fonts/fraunces?subsets=latin
+// if we want to self host fonts we search for *google font helper*
+
+//https://css-tricks.com/snippets/css/using-font-face-in-css/
+
+//Fonts should be in public folder (and not in assets)
+
+/* fraunces-600 - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/fonts/fraunces-v31-latin_latin-ext-600.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("../../assets/fonts/fraunces-v31-latin_latin-ext-600.ttf")
+      format("truetype");
+}
+
+/* fraunces-600 - latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/fraunces-v31-latin_latin-ext-600.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/fonts/fraunces-v31-latin_latin-ext-600.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+/* manrope-regular - cyrillic_cyrillic-ext_latin_latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/manrope-v15-cyrillic_cyrillic-ext_latin_latin-ext-regular.woff2")
+    format("woff2");
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", Georgia, "Times New Roman", Times, serif;
+}
+
+body {
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  font-size: fun.rem(18);
+}
+
+h1 {
+  font-size: 3.125rem;
+  font-size: clamp(3.125rem, 2.464788732394366rem + 2.8169014084507045vw, 5rem);
+}
